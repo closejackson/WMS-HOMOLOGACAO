@@ -1,0 +1,22 @@
+{
+  "query": "SELECT id, tenantId, waveNumber, status FROM pickingWaves;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute SELECT id, tenantId, waveNumber, status FROM pickingWaves;",
+  "rows": [
+    {
+      "id": "60001",
+      "tenantId": "30001",
+      "waveNumber": "OS-20260302-0001",
+      "status": "picked"
+    },
+    {
+      "id": "90001",
+      "tenantId": "30002",
+      "waveNumber": "OS-20260304-0001",
+      "status": "pending"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttenantId\twaveNumber\tstatus\n60001\t30001\tOS-20260302-0001\tpicked\n90001\t30002\tOS-20260304-0001\tpending\n",
+  "stderr": "",
+  "execution_time_ms": 54
+}

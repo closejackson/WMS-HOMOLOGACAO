@@ -1,0 +1,1 @@
+ALTER TABLE `labelAssociations` DROP COLUMN `ncgStatus`;

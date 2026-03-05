@@ -1,0 +1,153 @@
+{
+  "query": "\nSELECT id, code, zoneCode, tenantId, status FROM warehouseLocations WHERE tenantId = 30001 ORDER BY id LIMIT 20;\nSELECT id, code, name, warehouseId FROM warehouseZones WHERE code = 'NCG';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \nSELECT id, code, zoneCode, tenantId, status FROM warehouseLocations WHERE tenantId = 30001 ORDER BY id LIMIT 20;\nSELECT id, code, name, warehouseId FROM warehouseZones WHERE code = 'NCG';\n",
+  "rows": [
+    {
+      "id": "30001",
+      "code": "A04-02-02",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "occupied"
+    },
+    {
+      "id": "30002",
+      "code": "A04-02-04",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "occupied"
+    },
+    {
+      "id": "30003",
+      "code": "A04-02-06",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30004",
+      "code": "A04-02-08",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30005",
+      "code": "A04-02-10",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30006",
+      "code": "A04-02-12",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30007",
+      "code": "A04-02-14",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30008",
+      "code": "A04-02-16",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30009",
+      "code": "A04-02-18",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30010",
+      "code": "A04-02-20",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30011",
+      "code": "A04-02-22",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30012",
+      "code": "A04-02-24",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30013",
+      "code": "A04-02-26",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30014",
+      "code": "A04-02-28",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30015",
+      "code": "A04-02-30",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30016",
+      "code": "A04-02-32",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30017",
+      "code": "A04-02-34",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30018",
+      "code": "A04-02-36",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30019",
+      "code": "A04-02-38",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30020",
+      "code": "A04-02-40",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    }
+  ],
+  "messages": [
+    "id\tcode\tname\twarehouseId",
+    "3\tNCG\tNão conformidade\t1"
+  ],
+  "stdout": "id\tcode\tzoneCode\ttenantId\tstatus\n30001\tA04-02-02\tNULL\t30001\toccupied\n30002\tA04-02-04\tNULL\t30001\toccupied\n30003\tA04-02-06\tNULL\t30001\tlivre\n30004\tA04-02-08\tNULL\t30001\tlivre\n30005\tA04-02-10\tNULL\t30001\tlivre\n30006\tA04-02-12\tNULL\t30001\tlivre\n30007\tA04-02-14\tNULL\t30001\tlivre\n30008\tA04-02-16\tNULL\t30001\tlivre\n30009\tA04-02-18\tNULL\t30001\tlivre\n30010\tA04-02-20\tNULL\t30001\tlivre\n30011\tA04-02-22\tNULL\t30001\tlivre\n30012\tA04-02-24\tNULL\t30001\tlivre\n30013\tA04-02-26\tNULL\t30001\tlivre\n30014\tA04-02-28\tNULL\t30001\tlivre\n30015\tA04-02-30\tNULL\t30001\tlivre\n30016\tA04-02-32\tNULL\t30001\tlivre\n30017\tA04-02-34\tNULL\t30001\tlivre\n30018\tA04-02-36\tNULL\t30001\tlivre\n30019\tA04-02-38\tNULL\t30001\tlivre\n30020\tA04-02-40\tNULL\t30001\tlivre\nid\tcode\tname\twarehouseId\n3\tNCG\tNão conformidade\t1\n",
+  "stderr": "",
+  "execution_time_ms": 73
+}

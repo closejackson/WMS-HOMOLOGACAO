@@ -1,0 +1,1 @@
+ALTER TABLE `inventory` ADD `locationZone` varchar(10);

@@ -1,0 +1,1 @@
+ALTER TABLE `pickingAllocations` ADD `labelCode` varchar(100);

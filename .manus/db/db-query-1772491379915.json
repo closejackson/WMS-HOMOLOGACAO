@@ -1,0 +1,83 @@
+{
+  "query": "\nSELECT id, code, zoneCode, tenantId, status FROM warehouseLocations WHERE zoneCode = 'NCG' LIMIT 10;\nSELECT id, code, zoneCode, tenantId, status FROM warehouseLocations WHERE tenantId = 30001 LIMIT 10;\nSELECT id, code, name, warehouseId FROM warehouseZones WHERE code = 'NCG' OR name LIKE '%NCG%' OR name LIKE '%Quarentena%' LIMIT 10;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \nSELECT id, code, zoneCode, tenantId, status FROM warehouseLocations WHERE zoneCode = 'NCG' LIMIT 10;\nSELECT id, code, zoneCode, tenantId, status FROM warehouseLocations WHERE tenantId = 30001 LIMIT 10;\nSELECT id, code, name, warehouseId FROM warehouseZones WHERE code = 'NCG' OR name LIKE '%NCG%' OR name LIKE '%Quarentena%' LIMIT 10;\n",
+  "rows": [
+    {
+      "id": "30003",
+      "code": "A04-02-06",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30004",
+      "code": "A04-02-08",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30005",
+      "code": "A04-02-10",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30006",
+      "code": "A04-02-12",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30007",
+      "code": "A04-02-14",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30008",
+      "code": "A04-02-16",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30009",
+      "code": "A04-02-18",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30010",
+      "code": "A04-02-20",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30011",
+      "code": "A04-02-22",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    },
+    {
+      "id": "30012",
+      "code": "A04-02-24",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "livre"
+    }
+  ],
+  "messages": [
+    "id\tcode\tname\twarehouseId",
+    "3\tNCG\tNão conformidade\t1"
+  ],
+  "stdout": "id\tcode\tzoneCode\ttenantId\tstatus\n30003\tA04-02-06\tNULL\t30001\tlivre\n30004\tA04-02-08\tNULL\t30001\tlivre\n30005\tA04-02-10\tNULL\t30001\tlivre\n30006\tA04-02-12\tNULL\t30001\tlivre\n30007\tA04-02-14\tNULL\t30001\tlivre\n30008\tA04-02-16\tNULL\t30001\tlivre\n30009\tA04-02-18\tNULL\t30001\tlivre\n30010\tA04-02-20\tNULL\t30001\tlivre\n30011\tA04-02-22\tNULL\t30001\tlivre\n30012\tA04-02-24\tNULL\t30001\tlivre\nid\tcode\tname\twarehouseId\n3\tNCG\tNão conformidade\t1\n",
+  "stderr": "",
+  "execution_time_ms": 69
+}

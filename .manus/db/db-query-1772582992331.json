@@ -1,0 +1,143 @@
+{
+  "query": "\n-- Produtos do tenant 30001 (AESC Mãe de Deus)\nSELECT id, sku, description, tenantId FROM products WHERE tenantId = 30001 ORDER BY id LIMIT 10;\n\n-- Produtos do tenant 30002 (AESC UCG)\nSELECT id, sku, description, tenantId FROM products WHERE tenantId = 30002 ORDER BY id LIMIT 10;\n\n-- Verificar se há inventário do tenant 30001 com productId de produtos do tenant 30002\nSELECT i.tenantId AS invTenant, i.productId, p.tenantId AS prodTenant, p.sku, i.quantity, i.status\nFROM inventory i\nJOIN products p ON i.productId = p.id\nWHERE i.tenantId != p.tenantId\nLIMIT 10;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \n-- Produtos do tenant 30001 (AESC Mãe de Deus)\nSELECT id, sku, description, tenantId FROM products WHERE tenantId = 30001 ORDER BY id LIMIT 10;\n\n-- Produtos do tenant 30002 (AESC UCG)\nSELECT id, sku, description, tenantId FROM products WHERE tenantId = 30002 ORDER BY id LIMIT 10;\n\n-- Verificar se há inventário do tenant 30001 com productId de produtos do tenant 30002\nSELECT i.tenantId AS invTenant, i.productId, p.tenantId AS prodTenant, p.sku, i.quantity, i.status\nFROM inventory i\nJOIN products p ON i.productId = p.id\nWHERE i.tenantId != p.tenantId\nLIMIT 10;\n",
+  "rows": [
+    {
+      "id": "30001",
+      "sku": "37379",
+      "description": "MANTA SOFT BEGE 1.80X2.20 200GM² 1OO% POLIESTER TAM ADULTO",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30002",
+      "sku": "25672",
+      "description": "SOLUCAO FISIOLOGICA INJETAVEL 0,9% 1000ML",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30003",
+      "sku": "69846",
+      "description": "PAPEL TOALHA SCOTT BASIC ROLO FS 12X350",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30004",
+      "sku": "59961",
+      "description": "FRALDA DERMA PLUS 7 UNIDADES",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30005",
+      "sku": "25666",
+      "description": "SOLUCAO FISIOLOGICA 0,9% 100ML",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30006",
+      "sku": "37390",
+      "description": "TOALHA DE BANHO 1/3 C TIMBRE ALTO E BAIXO RELEVO",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30007",
+      "sku": "101591",
+      "description": "COMPRESSA GAZE 7.5X7.5CM 13F ESTERIL C10 194579 CREMER",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30008",
+      "sku": "17380",
+      "description": "LUVA PROC LATEX (P) C/100 DESCARPACK",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30009",
+      "sku": "8675",
+      "description": "LUVA PROC LATEX(M) C/100 SAFEMAX",
+      "tenantId": "30001"
+    },
+    {
+      "id": "30010",
+      "sku": "79119",
+      "description": "FRALDA AD G 70KG CONFORT 8UN",
+      "tenantId": "30001"
+    },
+    {
+      "id": "id",
+      "sku": "sku",
+      "description": "description",
+      "tenantId": "tenantId"
+    },
+    {
+      "id": "30044",
+      "sku": "100804",
+      "description": "BLUSA MANGA CURTA TAM P",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30045",
+      "sku": "100805",
+      "description": "BLUSA MANGA CURTA TAM M",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30046",
+      "sku": "100806",
+      "description": "BLUSA MANGA CURTA TAM G",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30047",
+      "sku": "100807",
+      "description": "BLUSA MANGA CURTA TAM GG",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30048",
+      "sku": "100808",
+      "description": "CALÇA TAM P",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30049",
+      "sku": "100809",
+      "description": "CALÇA TAM M",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30050",
+      "sku": "100810",
+      "description": "CALÇA TAM G",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30051",
+      "sku": "100811",
+      "description": "CALÇA TAM GG",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30052",
+      "sku": "107540",
+      "description": "RIOHEX CLOREXIDINA 2% SOL ALCOOLICA 100ML RIOQUIMICA",
+      "tenantId": "30002"
+    },
+    {
+      "id": "30053",
+      "sku": "21820",
+      "description": "LENÇOL LISO 120 X 220 TEKA",
+      "tenantId": "30002"
+    }
+  ],
+  "messages": [
+    "invTenant\tproductId\tprodTenant\tsku\tquantity\tstatus",
+    "30001\t60002\t30002\t401460P\t80\tquarantine",
+    "30001\t60001\t30002\t443060\t5600\tavailable",
+    "30001\t60002\t30002\t401460P\t3200\tavailable",
+    "30001\t60002\t30002\t401460P\t3200\tavailable",
+    "30001\t60003\t30002\t834207\t5600\tavailable"
+  ],
+  "stdout": "id\tsku\tdescription\ttenantId\n30001\t37379\tMANTA SOFT BEGE 1.80X2.20 200GM² 1OO% POLIESTER TAM ADULTO\t30001\n30002\t25672\tSOLUCAO FISIOLOGICA INJETAVEL 0,9% 1000ML\t30001\n30003\t69846\tPAPEL TOALHA SCOTT BASIC ROLO FS 12X350\t30001\n30004\t59961\tFRALDA DERMA PLUS 7 UNIDADES\t30001\n30005\t25666\tSOLUCAO FISIOLOGICA 0,9% 100ML\t30001\n30006\t37390\tTOALHA DE BANHO 1/3 C TIMBRE ALTO E BAIXO RELEVO\t30001\n30007\t101591\tCOMPRESSA GAZE 7.5X7.5CM 13F ESTERIL C10 194579 CREMER\t30001\n30008\t17380\tLUVA PROC LATEX (P) C/100 DESCARPACK\t30001\n30009\t8675\tLUVA PROC LATEX(M) C/100 SAFEMAX\t30001\n30010\t79119\tFRALDA AD G 70KG CONFORT 8UN\t30001\nid\tsku\tdescription\ttenantId\n30044\t100804\tBLUSA MANGA CURTA TAM P\t30002\n30045\t100805\tBLUSA MANGA CURTA TAM M\t30002\n30046\t100806\tBLUSA MANGA CURTA TAM G\t30002\n30047\t100807\tBLUSA MANGA CURTA TAM GG\t30002\n30048\t100808\tCALÇA TAM P\t30002\n30049\t100809\tCALÇA TAM M\t30002\n30050\t100810\tCALÇA TAM G\t30002\n30051\t100811\tCALÇA TAM GG\t30002\n30052\t107540\tRIOHEX CLOREXIDINA 2% SOL ALCOOLICA 100ML RIOQUIMICA\t30002\n30053\t21820\tLENÇOL LISO 120 X 220 TEKA\t30002\ninvTenant\tproductId\tprodTenant\tsku\tquantity\tstatus\n30001\t60002\t30002\t401460P\t80\tquarantine\n30001\t60001\t30002\t443060\t5600\tavailable\n30001\t60002\t30002\t401460P\t3200\tavailable\n30001\t60002\t30002\t401460P\t3200\tavailable\n30001\t60003\t30002\t834207\t5600\tavailable\n",
+  "stderr": "",
+  "execution_time_ms": 70
+}

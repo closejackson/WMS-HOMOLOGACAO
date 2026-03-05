@@ -1,0 +1,35 @@
+{
+  "query": "\n-- Reverter inventory: adicionar 'available', migrar dados, remover 'avaliable'\nALTER TABLE inventory MODIFY COLUMN status ENUM('avaliable', 'available', 'quarantine', 'blocked', 'damaged', 'expired') NOT NULL DEFAULT 'available';\nUPDATE inventory SET status = 'available' WHERE status = 'avaliable';\nALTER TABLE inventory MODIFY COLUMN status ENUM('available', 'quarantine', 'blocked', 'damaged', 'expired') NOT NULL DEFAULT 'available';\n\n-- Reverter warehouseLocations: adicionar 'available' e 'livre', migrar dados, remover 'avaliable'\nALTER TABLE warehouseLocations MODIFY COLUMN status ENUM('avaliable', 'available', 'occupied', 'blocked', 'counting', 'quarantine') NOT NULL DEFAULT 'available';\nUPDATE warehouseLocations SET status = 'available' WHERE status = 'avaliable';\nALTER TABLE warehouseLocations MODIFY COLUMN status ENUM('available', 'occupied', 'blocked', 'counting', 'quarantine') NOT NULL DEFAULT 'available';\n\n-- Verificar resultado\nSELECT 'inventory' as tabela, status, COUNT(*) as total FROM inventory GROUP BY status\nUNION ALL\nSELECT 'warehouseLocations' as tabela, status, COUNT(*) as total FROM warehouseLocations GROUP BY status;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \n-- Reverter inventory: adicionar 'available', migrar dados, remover 'avaliable'\nALTER TABLE inventory MODIFY COLUMN status ENUM('avaliable', 'available', 'quarantine', 'blocked', 'damaged', 'expired') NOT NULL DEFAULT 'available';\nUPDATE inventory SET status = 'available' WHERE status = 'avaliable';\nALTER TABLE inventory MODIFY COLUMN status ENUM('available', 'quarantine', 'blocked', 'damaged', 'expired') NOT NULL DEFAULT 'available';\n\n-- Reverter warehouseLocations: adicionar 'available' e 'livre', migrar dados, remover 'avaliable'\nALTER TABLE warehouseLocations MODIFY COLUMN status ENUM('avaliable', 'available', 'occupied', 'blocked', 'counting', 'quarantine') NOT NULL DEFAULT 'available';\nUPDATE warehouseLocations SET status = 'available' WHERE status = 'avaliable';\nALTER TABLE warehouseLocations MODIFY COLUMN status ENUM('available', 'occupied', 'blocked', 'counting', 'quarantine') NOT NULL DEFAULT 'available';\n\n-- Verificar resultado\nSELECT 'inventory' as tabela, status, COUNT(*) as total FROM inventory GROUP BY status\nUNION ALL\nSELECT 'warehouseLocations' as tabela, status, COUNT(*) as total FROM warehouseLocations GROUP BY status;\n",
+  "rows": [
+    {
+      "tabela": "warehouseLocations",
+      "status": "available",
+      "total": "630"
+    },
+    {
+      "tabela": "warehouseLocations",
+      "status": "quarantine",
+      "total": "4"
+    },
+    {
+      "tabela": "inventory",
+      "status": "available",
+      "total": "130"
+    },
+    {
+      "tabela": "inventory",
+      "status": "quarantine",
+      "total": "1"
+    },
+    {
+      "tabela": "warehouseLocations",
+      "status": "occupied",
+      "total": "94"
+    }
+  ],
+  "messages": [],
+  "stdout": "tabela\tstatus\ttotal\nwarehouseLocations\tavailable\t630\nwarehouseLocations\tquarantine\t4\ninventory\tavailable\t130\ninventory\tquarantine\t1\nwarehouseLocations\toccupied\t94\n",
+  "stderr": "",
+  "execution_time_ms": 1814
+}

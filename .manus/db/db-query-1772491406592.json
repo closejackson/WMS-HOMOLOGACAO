@@ -1,0 +1,9 @@
+{
+  "query": "\nINSERT INTO warehouseLocations (zoneId, zoneCode, tenantId, code, locationType, storageRule, status)\nVALUES \n  (3, 'NCG', 30001, 'NCG-30001-001', 'whole', 'multi', 'quarantine'),\n  (3, 'NCG', 30002, 'NCG-30002-001', 'whole', 'multi', 'quarantine');\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \nINSERT INTO warehouseLocations (zoneId, zoneCode, tenantId, code, locationType, storageRule, status)\nVALUES \n  (3, 'NCG', 30001, 'NCG-30001-001', 'whole', 'multi', 'quarantine'),\n  (3, 'NCG', 30002, 'NCG-30002-001', 'whole', 'multi', 'quarantine');\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 63
+}

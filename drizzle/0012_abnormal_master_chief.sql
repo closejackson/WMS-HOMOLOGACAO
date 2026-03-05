@@ -1,0 +1,1 @@
+ALTER TABLE `inventory` ADD `labelCode` varchar(255);

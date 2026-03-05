@@ -1,0 +1,17 @@
+{
+  "query": "\nSELECT id, code, zoneCode, tenantId, status FROM warehouseLocations WHERE id = 30357;\nSELECT id, labelCode, tenantId, locationId FROM inventory WHERE labelCode = '401460P22D10LB112' OR labelCode = '401460P-22D10LB112' LIMIT 5;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \nSELECT id, code, zoneCode, tenantId, status FROM warehouseLocations WHERE id = 30357;\nSELECT id, labelCode, tenantId, locationId FROM inventory WHERE labelCode = '401460P22D10LB112' OR labelCode = '401460P-22D10LB112' LIMIT 5;\n",
+  "rows": [
+    {
+      "id": "30357",
+      "code": "NCG-01-A",
+      "zoneCode": "NULL",
+      "tenantId": "30001",
+      "status": "quarantine"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcode\tzoneCode\ttenantId\tstatus\n30357\tNCG-01-A\tNULL\t30001\tquarantine\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

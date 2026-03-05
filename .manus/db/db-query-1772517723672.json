@@ -1,0 +1,18 @@
+{
+  "query": "\n-- Passo 1: Alterar o enum para incluir 'avaliable' junto com os valores existentes\nALTER TABLE inventory MODIFY COLUMN status ENUM('avaliable', 'available', 'quarantine', 'blocked', 'damaged', 'expired') NOT NULL DEFAULT 'avaliable';\n\n-- Passo 2: Atualizar todos os registros com status 'available' para 'avaliable'\nUPDATE inventory SET status = 'avaliable' WHERE status = 'available';\n\n-- Passo 3: Remover 'available' do enum, deixando apenas 'avaliable'\nALTER TABLE inventory MODIFY COLUMN status ENUM('avaliable', 'quarantine', 'blocked', 'damaged', 'expired') NOT NULL DEFAULT 'avaliable';\n\n-- Verificar resultado\nSELECT status, COUNT(*) as total FROM inventory GROUP BY status;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \n-- Passo 1: Alterar o enum para incluir 'avaliable' junto com os valores existentes\nALTER TABLE inventory MODIFY COLUMN status ENUM('avaliable', 'available', 'quarantine', 'blocked', 'damaged', 'expired') NOT NULL DEFAULT 'avaliable';\n\n-- Passo 2: Atualizar todos os registros com status 'available' para 'avaliable'\nUPDATE inventory SET status = 'avaliable' WHERE status = 'available';\n\n-- Passo 3: Remover 'available' do enum, deixando apenas 'avaliable'\nALTER TABLE inventory MODIFY COLUMN status ENUM('avaliable', 'quarantine', 'blocked', 'damaged', 'expired') NOT NULL DEFAULT 'avaliable';\n\n-- Verificar resultado\nSELECT status, COUNT(*) as total FROM inventory GROUP BY status;\n",
+  "rows": [
+    {
+      "status": "avaliable",
+      "total": "134"
+    },
+    {
+      "status": "quarantine",
+      "total": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "status\ttotal\navaliable\t134\nquarantine\t1\n",
+  "stderr": "",
+  "execution_time_ms": 583
+}

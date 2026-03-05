@@ -1,0 +1,1 @@
+ALTER TABLE `inventory` ADD CONSTRAINT `unique_label_tenant_idx` UNIQUE(`labelCode`,`tenantId`);

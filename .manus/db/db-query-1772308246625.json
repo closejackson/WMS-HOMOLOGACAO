@@ -1,0 +1,94 @@
+{
+  "query": "SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, EXTRA FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'labelAssociations' ORDER BY ORDINAL_POSITION;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, EXTRA FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'labelAssociations' ORDER BY ORDINAL_POSITION;",
+  "rows": [
+    {
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "COLUMN_NAME": "labelCode",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "productId",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "batch",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "YES",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "expiryDate",
+      "COLUMN_TYPE": "date",
+      "IS_NULLABLE": "YES",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "totalUnits",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "0",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "associatedBy",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "associatedAt",
+      "COLUMN_TYPE": "timestamp",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "CURRENT_TIMESTAMP",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "uniqueCode",
+      "COLUMN_TYPE": "varchar(200)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "tenantId",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "status",
+      "COLUMN_TYPE": "enum('RECEIVING','AVAILABLE','BLOCKED','EXPIRED')",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "AVAILABLE",
+      "EXTRA": ""
+    },
+    {
+      "COLUMN_NAME": "unitsPerBox",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "NULL",
+      "EXTRA": ""
+    }
+  ],
+  "messages": [],
+  "stdout": "COLUMN_NAME\tCOLUMN_TYPE\tIS_NULLABLE\tCOLUMN_DEFAULT\tEXTRA\nid\tint(11)\tNO\tNULL\tauto_increment\nlabelCode\tvarchar(100)\tNO\tNULL\t\nproductId\tint(11)\tNO\tNULL\t\nbatch\tvarchar(100)\tYES\tNULL\t\nexpiryDate\tdate\tYES\tNULL\t\ntotalUnits\tint(11)\tNO\t0\t\nassociatedBy\tint(11)\tNO\tNULL\t\nassociatedAt\ttimestamp\tNO\tCURRENT_TIMESTAMP\t\nuniqueCode\tvarchar(200)\tNO\tNULL\t\ntenantId\tint(11)\tNO\tNULL\t\nstatus\tenum('RECEIVING','AVAILABLE','BLOCKED','EXPIRED')\tNO\tAVAILABLE\t\nunitsPerBox\tint(11)\tNO\tNULL\t\n",
+  "stderr": "",
+  "execution_time_ms": 60
+}

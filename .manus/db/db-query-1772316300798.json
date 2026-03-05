@@ -1,0 +1,9 @@
+{
+  "query": "DELETE FROM labelAssociations WHERE tenantId = 2 AND associatedBy = 1 AND id IN (1, 2, 3, 4, 5);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute DELETE FROM labelAssociations WHERE tenantId = 2 AND associatedBy = 1 AND id IN (1, 2, 3, 4, 5);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 144
+}

@@ -1,0 +1,106 @@
+{
+  "query": "DESCRIBE labelAssociations;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute DESCRIBE labelAssociations;",
+  "rows": [
+    {
+      "Field": "id",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "PRI",
+      "Default": "NULL",
+      "Extra": "auto_increment"
+    },
+    {
+      "Field": "labelCode",
+      "Type": "varchar(100)",
+      "Null": "NO",
+      "Key": "UNI",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "productId",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "batch",
+      "Type": "varchar(100)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "expiryDate",
+      "Type": "date",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "totalUnits",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "associatedBy",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "associatedAt",
+      "Type": "timestamp",
+      "Null": "NO",
+      "Key": "",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": ""
+    },
+    {
+      "Field": "uniqueCode",
+      "Type": "varchar(200)",
+      "Null": "NO",
+      "Key": "MUL",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "tenantId",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "MUL",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "status",
+      "Type": "enum('RECEIVING','AVAILABLE','BLOCKED','EXPIRED')",
+      "Null": "NO",
+      "Key": "",
+      "Default": "AVAILABLE",
+      "Extra": ""
+    },
+    {
+      "Field": "unitsPerBox",
+      "Type": "int(11)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    }
+  ],
+  "messages": [],
+  "stdout": "Field\tType\tNull\tKey\tDefault\tExtra\nid\tint(11)\tNO\tPRI\tNULL\tauto_increment\nlabelCode\tvarchar(100)\tNO\tUNI\tNULL\t\nproductId\tint(11)\tNO\t\tNULL\t\nbatch\tvarchar(100)\tYES\t\tNULL\t\nexpiryDate\tdate\tYES\t\tNULL\t\ntotalUnits\tint(11)\tNO\t\t0\t\nassociatedBy\tint(11)\tNO\t\tNULL\t\nassociatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t\nuniqueCode\tvarchar(200)\tNO\tMUL\tNULL\t\ntenantId\tint(11)\tNO\tMUL\tNULL\t\nstatus\tenum('RECEIVING','AVAILABLE','BLOCKED','EXPIRED')\tNO\t\tAVAILABLE\t\nunitsPerBox\tint(11)\tNO\t\tNULL\t\n",
+  "stderr": "",
+  "execution_time_ms": 126
+}

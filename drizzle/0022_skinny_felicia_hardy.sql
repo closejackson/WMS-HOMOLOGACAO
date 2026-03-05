@@ -1,0 +1,1 @@
+ALTER TABLE `receivingOrderItems` MODIFY COLUMN `status` enum('pending','in_quarantine','approved','rejected','awaiting_approval','receiving','completed') NOT NULL DEFAULT 'pending';

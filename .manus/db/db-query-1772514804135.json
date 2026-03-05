@@ -1,0 +1,13 @@
+{
+  "query": "\n-- Primeiro: verificar quantos registros órfãos existem\nSELECT COUNT(*) as orfaos_quantity_zero FROM inventory WHERE quantity = 0;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \n-- Primeiro: verificar quantos registros órfãos existem\nSELECT COUNT(*) as orfaos_quantity_zero FROM inventory WHERE quantity = 0;\n",
+  "rows": [
+    {
+      "orfaos_quantity_zero": "4"
+    }
+  ],
+  "messages": [],
+  "stdout": "orfaos_quantity_zero\n4\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

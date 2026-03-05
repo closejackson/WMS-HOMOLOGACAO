@@ -1,0 +1,44 @@
+{
+  "query": "\nSELECT \n  i.id,\n  i.productId,\n  p.sku,\n  p.description,\n  i.tenantId,\n  i.quantity,\n  i.reservedQuantity,\n  i.status,\n  i.locationId,\n  wl.code AS locationCode,\n  wl.zoneId,\n  wz.id AS zoneId,\n  wz.code AS zoneCode,\n  wz.name AS zoneName,\n  i.uniqueCode,\n  i.batch\nFROM inventory i\nLEFT JOIN products p ON i.productId = p.id\nLEFT JOIN warehouseLocations wl ON i.locationId = wl.id\nLEFT JOIN warehouseZones wz ON wl.zoneId = wz.id\nWHERE p.sku = '443060';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \nSELECT \n  i.id,\n  i.productId,\n  p.sku,\n  p.description,\n  i.tenantId,\n  i.quantity,\n  i.reservedQuantity,\n  i.status,\n  i.locationId,\n  wl.code AS locationCode,\n  wl.zoneId,\n  wz.id AS zoneId,\n  wz.code AS zoneCode,\n  wz.name AS zoneName,\n  i.uniqueCode,\n  i.batch\nFROM inventory i\nLEFT JOIN products p ON i.productId = p.id\nLEFT JOIN warehouseLocations wl ON i.locationId = wl.id\nLEFT JOIN warehouseZones wz ON wl.zoneId = wz.id\nWHERE p.sku = '443060';\n",
+  "rows": [
+    {
+      "id": "300002",
+      "productId": "60001",
+      "sku": "443060",
+      "description": "EXTENSOFIX 60 CM",
+      "tenantId": "30001",
+      "quantity": "5600",
+      "reservedQuantity": "0",
+      "status": "available",
+      "locationId": "90001",
+      "locationCode": "Z01-01-01",
+      "zoneId": "4",
+      "zoneCode": "STORAGE",
+      "zoneName": "Armazenagem",
+      "uniqueCode": "443060-22D14LA125",
+      "batch": "22D14LA125"
+    },
+    {
+      "id": "300006",
+      "productId": "60001",
+      "sku": "443060",
+      "description": "EXTENSOFIX 60 CM",
+      "tenantId": "30002",
+      "quantity": "5600",
+      "reservedQuantity": "0",
+      "status": "available",
+      "locationId": "150001",
+      "locationCode": "Z01-02-01",
+      "zoneId": "4",
+      "zoneCode": "STORAGE",
+      "zoneName": "Armazenagem",
+      "uniqueCode": "443060-22D14LA124",
+      "batch": "22D14LA124"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tproductId\tsku\tdescription\ttenantId\tquantity\treservedQuantity\tstatus\tlocationId\tlocationCode\tzoneId\tzoneId\tzoneCode\tzoneName\tuniqueCode\tbatch\n300002\t60001\t443060\tEXTENSOFIX 60 CM\t30001\t5600\t0\tavailable\t90001\tZ01-01-01\t4\t4\tSTORAGE\tArmazenagem\t443060-22D14LA125\t22D14LA125\n300006\t60001\t443060\tEXTENSOFIX 60 CM\t30002\t5600\t0\tavailable\t150001\tZ01-02-01\t4\t4\tSTORAGE\tArmazenagem\t443060-22D14LA124\t22D14LA124\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

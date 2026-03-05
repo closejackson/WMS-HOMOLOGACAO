@@ -1,0 +1,26 @@
+{
+  "query": "\n-- Ver todos os produtos com SKU 443060 ou nome EXTENSOFIX\nSELECT id, sku, description, tenantId FROM products WHERE sku LIKE '%443060%' OR description LIKE '%EXTENSOFIX%';\n\n-- Ver o inventory do EXTENSOFIX (via productId que está no inventory)\nSELECT i.id, i.productId, i.tenantId, i.quantity, i.status, p.sku, p.description, p.tenantId AS productTenantId\nFROM inventory i\nLEFT JOIN products p ON i.productId = p.id\nWHERE p.sku LIKE '%443060%' OR p.description LIKE '%EXTENSOFIX%';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \n-- Ver todos os produtos com SKU 443060 ou nome EXTENSOFIX\nSELECT id, sku, description, tenantId FROM products WHERE sku LIKE '%443060%' OR description LIKE '%EXTENSOFIX%';\n\n-- Ver o inventory do EXTENSOFIX (via productId que está no inventory)\nSELECT i.id, i.productId, i.tenantId, i.quantity, i.status, p.sku, p.description, p.tenantId AS productTenantId\nFROM inventory i\nLEFT JOIN products p ON i.productId = p.id\nWHERE p.sku LIKE '%443060%' OR p.description LIKE '%EXTENSOFIX%';\n",
+  "rows": [
+    {
+      "id": "60001",
+      "sku": "443060",
+      "description": "EXTENSOFIX 60 CM",
+      "tenantId": "30002"
+    },
+    {
+      "id": "60004",
+      "sku": "443060",
+      "description": "EXTENSOFIX 60 CM",
+      "tenantId": "30001"
+    }
+  ],
+  "messages": [
+    "id\tproductId\ttenantId\tquantity\tstatus\tsku\tdescription\tproductTenantId",
+    "300006\t60001\t30002\t5600\tavailable\t443060\tEXTENSOFIX 60 CM\t30002",
+    "300002\t60001\t30001\t5600\tavailable\t443060\tEXTENSOFIX 60 CM\t30002"
+  ],
+  "stdout": "id\tsku\tdescription\ttenantId\n60001\t443060\tEXTENSOFIX 60 CM\t30002\n60004\t443060\tEXTENSOFIX 60 CM\t30001\nid\tproductId\ttenantId\tquantity\tstatus\tsku\tdescription\tproductTenantId\n300006\t60001\t30002\t5600\tavailable\t443060\tEXTENSOFIX 60 CM\t30002\n300002\t60001\t30001\t5600\tavailable\t443060\tEXTENSOFIX 60 CM\t30002\n",
+  "stderr": "",
+  "execution_time_ms": 63
+}

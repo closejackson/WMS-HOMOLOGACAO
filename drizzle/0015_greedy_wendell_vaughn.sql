@@ -1,0 +1,1 @@
+ALTER TABLE `nonConformities` ADD `receivingOrderItemId` int NOT NULL;

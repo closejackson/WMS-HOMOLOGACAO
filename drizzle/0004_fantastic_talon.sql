@@ -1,0 +1,1 @@
+ALTER TABLE `pickingOrders` DROP COLUMN `customerId`;

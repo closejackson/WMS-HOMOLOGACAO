@@ -1,0 +1,20 @@
+{
+  "query": "SELECT id, labelCode, uniqueCode, tenantId, locationId, locationZone, status, quantity FROM inventory WHERE labelCode = '401460P22D10LB112' OR uniqueCode LIKE '%401460P-22D10LB112%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute SELECT id, labelCode, uniqueCode, tenantId, locationId, locationZone, status, quantity FROM inventory WHERE labelCode = '401460P22D10LB112' OR uniqueCode LIKE '%401460P-22D10LB112%';",
+  "rows": [
+    {
+      "id": "210006",
+      "labelCode": "401460P22D10LB112",
+      "uniqueCode": "401460P-22D10LB112",
+      "tenantId": "30001",
+      "locationId": "30357",
+      "locationZone": "NCG",
+      "status": "quarantine",
+      "quantity": "80"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tlabelCode\tuniqueCode\ttenantId\tlocationId\tlocationZone\tstatus\tquantity\n210006\t401460P22D10LB112\t401460P-22D10LB112\t30001\t30357\tNCG\tquarantine\t80\n",
+  "stderr": "",
+  "execution_time_ms": 86
+}

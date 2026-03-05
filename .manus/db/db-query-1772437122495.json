@@ -1,0 +1,22 @@
+{
+  "query": "\nSELECT id, name FROM tenants LIMIT 20;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \nSELECT id, name FROM tenants LIMIT 20;\n",
+  "rows": [
+    {
+      "id": "1",
+      "name": "Global Admin"
+    },
+    {
+      "id": "30001",
+      "name": "AESC - Mãe de Deus"
+    },
+    {
+      "id": "30002",
+      "name": "AESC - Mãe de Deus - UCG"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n1\tGlobal Admin\n30001\tAESC - Mãe de Deus\n30002\tAESC - Mãe de Deus - UCG\n",
+  "stderr": "",
+  "execution_time_ms": 73
+}

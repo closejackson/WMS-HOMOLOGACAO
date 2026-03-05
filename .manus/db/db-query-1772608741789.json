@@ -1,0 +1,20 @@
+{
+  "query": "SELECT sc.id, sc.pickingOrderId, sc.customerOrderNumber, sc.operatorId, sc.status, sc.tenantId, sc.createdAt, po.orderNumber FROM stageChecks sc LEFT JOIN pickingOrders po ON sc.pickingOrderId = po.id WHERE sc.status = 'in_progress';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute SELECT sc.id, sc.pickingOrderId, sc.customerOrderNumber, sc.operatorId, sc.status, sc.tenantId, sc.createdAt, po.orderNumber FROM stageChecks sc LEFT JOIN pickingOrders po ON sc.pickingOrderId = po.id WHERE sc.status = 'in_progress';",
+  "rows": [
+    {
+      "id": "90001",
+      "pickingOrderId": "90001",
+      "customerOrderNumber": "005",
+      "operatorId": "1",
+      "status": "in_progress",
+      "tenantId": "30002",
+      "createdAt": "2026-03-04 07:13:09",
+      "orderNumber": "PK1772583321886"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tpickingOrderId\tcustomerOrderNumber\toperatorId\tstatus\ttenantId\tcreatedAt\torderNumber\n90001\t90001\t005\t1\tin_progress\t30002\t2026-03-04 07:13:09\tPK1772583321886\n",
+  "stderr": "",
+  "execution_time_ms": 62
+}

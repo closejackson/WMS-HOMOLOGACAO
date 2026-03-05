@@ -1,0 +1,1 @@
+ALTER TABLE `warehouseLocations` ADD `zoneCode` varchar(20);

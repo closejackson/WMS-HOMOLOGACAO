@@ -1,0 +1,33 @@
+{
+  "query": "SHOW CREATE TABLE labelAssociations;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute SHOW CREATE TABLE labelAssociations;",
+  "rows": [
+    {
+      "Table": "labelAssociations",
+      "Create Table": "CREATE TABLE `labelAssociations` ("
+    }
+  ],
+  "messages": [
+    "  `id` int(11) NOT NULL AUTO_INCREMENT,",
+    "  `labelCode` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,",
+    "  `productId` int(11) NOT NULL,",
+    "  `batch` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,",
+    "  `expiryDate` date DEFAULT NULL,",
+    "  `totalUnits` int(11) NOT NULL DEFAULT '0',",
+    "  `associatedBy` int(11) NOT NULL,",
+    "  `associatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,",
+    "  `uniqueCode` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,",
+    "  `tenantId` int(11) NOT NULL,",
+    "  `status` enum('RECEIVING','AVAILABLE','BLOCKED','EXPIRED') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'AVAILABLE',",
+    "  `unitsPerBox` int(11) NOT NULL,",
+    "  PRIMARY KEY (`id`) /*T![clustered_index] CLUSTERED */,",
+    "  UNIQUE KEY `labelAssociations_labelCode_unique` (`labelCode`),",
+    "  KEY `label_assoc_label_code_idx` (`labelCode`),",
+    "  KEY `label_assoc_unique_code_idx` (`uniqueCode`),",
+    "  KEY `label_assoc_tenant_id_idx` (`tenantId`)",
+    ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=120001"
+  ],
+  "stdout": "Table\tCreate Table\nlabelAssociations\tCREATE TABLE `labelAssociations` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `labelCode` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `productId` int(11) NOT NULL,\n  `batch` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `expiryDate` date DEFAULT NULL,\n  `totalUnits` int(11) NOT NULL DEFAULT '0',\n  `associatedBy` int(11) NOT NULL,\n  `associatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `uniqueCode` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `tenantId` int(11) NOT NULL,\n  `status` enum('RECEIVING','AVAILABLE','BLOCKED','EXPIRED') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'AVAILABLE',\n  `unitsPerBox` int(11) NOT NULL,\n  PRIMARY KEY (`id`) /*T![clustered_index] CLUSTERED */,\n  UNIQUE KEY `labelAssociations_labelCode_unique` (`labelCode`),\n  KEY `label_assoc_label_code_idx` (`labelCode`),\n  KEY `label_assoc_unique_code_idx` (`uniqueCode`),\n  KEY `label_assoc_tenant_id_idx` (`tenantId`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=120001\n",
+  "stderr": "",
+  "execution_time_ms": 102
+}

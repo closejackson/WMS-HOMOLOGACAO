@@ -1,0 +1,22 @@
+{
+  "query": "\n-- Passo 1: Adicionar 'avaliable' ao enum mantendo os existentes\nALTER TABLE warehouseLocations MODIFY COLUMN status ENUM('avaliable', 'livre', 'available', 'occupied', 'blocked', 'counting', 'quarantine') NOT NULL DEFAULT 'avaliable';\n\n-- Passo 2: Migrar 'livre' e 'available' para 'avaliable'\nUPDATE warehouseLocations SET status = 'avaliable' WHERE status IN ('livre', 'available');\n\n-- Passo 3: Remover 'livre' e 'available' do enum\nALTER TABLE warehouseLocations MODIFY COLUMN status ENUM('avaliable', 'occupied', 'blocked', 'counting', 'quarantine') NOT NULL DEFAULT 'avaliable';\n\n-- Verificar resultado\nSELECT status, COUNT(*) as total FROM warehouseLocations GROUP BY status;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \n-- Passo 1: Adicionar 'avaliable' ao enum mantendo os existentes\nALTER TABLE warehouseLocations MODIFY COLUMN status ENUM('avaliable', 'livre', 'available', 'occupied', 'blocked', 'counting', 'quarantine') NOT NULL DEFAULT 'avaliable';\n\n-- Passo 2: Migrar 'livre' e 'available' para 'avaliable'\nUPDATE warehouseLocations SET status = 'avaliable' WHERE status IN ('livre', 'available');\n\n-- Passo 3: Remover 'livre' e 'available' do enum\nALTER TABLE warehouseLocations MODIFY COLUMN status ENUM('avaliable', 'occupied', 'blocked', 'counting', 'quarantine') NOT NULL DEFAULT 'avaliable';\n\n-- Verificar resultado\nSELECT status, COUNT(*) as total FROM warehouseLocations GROUP BY status;\n",
+  "rows": [
+    {
+      "status": "occupied",
+      "total": "94"
+    },
+    {
+      "status": "avaliable",
+      "total": "630"
+    },
+    {
+      "status": "quarantine",
+      "total": "4"
+    }
+  ],
+  "messages": [],
+  "stdout": "status\ttotal\noccupied\t94\navaliable\t630\nquarantine\t4\n",
+  "stderr": "",
+  "execution_time_ms": 3117
+}

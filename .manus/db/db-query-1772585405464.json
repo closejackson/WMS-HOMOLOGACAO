@@ -1,0 +1,37 @@
+{
+  "query": "SELECT COUNT(*) as receiving_count FROM receivingOrders;\nSELECT COUNT(*) as waves_count FROM pickingWaves;\nSELECT COUNT(*) as shipments_count FROM shipments;\nSELECT COUNT(*) as labels_count FROM labelAssociations;\nSELECT COUNT(*) as locations_count FROM warehouseLocations;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute SELECT COUNT(*) as receiving_count FROM receivingOrders;\nSELECT COUNT(*) as waves_count FROM pickingWaves;\nSELECT COUNT(*) as shipments_count FROM shipments;\nSELECT COUNT(*) as labels_count FROM labelAssociations;\nSELECT COUNT(*) as locations_count FROM warehouseLocations;",
+  "rows": [
+    {
+      "receiving_count": "3"
+    },
+    {
+      "receiving_count": "waves_count"
+    },
+    {
+      "receiving_count": "2"
+    },
+    {
+      "receiving_count": "shipments_count"
+    },
+    {
+      "receiving_count": "0"
+    },
+    {
+      "receiving_count": "labels_count"
+    },
+    {
+      "receiving_count": "8"
+    },
+    {
+      "receiving_count": "locations_count"
+    },
+    {
+      "receiving_count": "728"
+    }
+  ],
+  "messages": [],
+  "stdout": "receiving_count\n3\nwaves_count\n2\nshipments_count\n0\nlabels_count\n8\nlocations_count\n728\n",
+  "stderr": "",
+  "execution_time_ms": 77
+}

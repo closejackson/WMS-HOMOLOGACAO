@@ -1,0 +1,37 @@
+{
+  "query": "\n-- Ver produto e seu tenantId\nSELECT id, sku, description, tenantId FROM products WHERE sku = '443060';\n\n-- Ver tenant AESC Mãe de Deus\nSELECT id, name, cnpj FROM tenants WHERE name LIKE '%AESC%' OR name LIKE '%Mãe%';\n\n-- Ver inventory com tenantId explícito\nSELECT i.id, i.productId, i.tenantId, i.quantity, i.status, wz.code AS zoneCode\nFROM inventory i\nLEFT JOIN warehouseLocations wl ON i.locationId = wl.id\nLEFT JOIN warehouseZones wz ON wl.zoneId = wz.id\nWHERE i.tenantId = (SELECT id FROM tenants WHERE name LIKE '%AESC%' LIMIT 1)\nLIMIT 10;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \n-- Ver produto e seu tenantId\nSELECT id, sku, description, tenantId FROM products WHERE sku = '443060';\n\n-- Ver tenant AESC Mãe de Deus\nSELECT id, name, cnpj FROM tenants WHERE name LIKE '%AESC%' OR name LIKE '%Mãe%';\n\n-- Ver inventory com tenantId explícito\nSELECT i.id, i.productId, i.tenantId, i.quantity, i.status, wz.code AS zoneCode\nFROM inventory i\nLEFT JOIN warehouseLocations wl ON i.locationId = wl.id\nLEFT JOIN warehouseZones wz ON wl.zoneId = wz.id\nWHERE i.tenantId = (SELECT id FROM tenants WHERE name LIKE '%AESC%' LIMIT 1)\nLIMIT 10;\n",
+  "rows": [
+    {
+      "id": "60001",
+      "sku": "443060",
+      "description": "EXTENSOFIX 60 CM",
+      "tenantId": "30002"
+    },
+    {
+      "id": "60004",
+      "sku": "443060",
+      "description": "EXTENSOFIX 60 CM",
+      "tenantId": "30001"
+    }
+  ],
+  "messages": [
+    "id\tname\tcnpj",
+    "30001\tAESC - Mãe de Deus\t88625686002443",
+    "30002\tAESC - Mãe de Deus - UCG\t88625686002444",
+    "id\tproductId\ttenantId\tquantity\tstatus\tzoneCode",
+    "150019\t30001\t30001\t108\tavailable\tSTORAGE",
+    "150020\t30001\t30001\t84\tavailable\tSTORAGE",
+    "150021\t30002\t30001\t800\tavailable\tSTORAGE",
+    "150022\t30003\t30001\t228\tavailable\tSTORAGE",
+    "150027\t30003\t30001\t180\tavailable\tSTORAGE",
+    "150029\t30002\t30001\t6\tavailable\tSTORAGE",
+    "150037\t30002\t30001\t672\tavailable\tSTORAGE",
+    "150053\t30001\t30001\t108\tavailable\tSTORAGE",
+    "150068\t30003\t30001\t60\tavailable\tSTORAGE",
+    "150074\t30002\t30001\t192\tavailable\tSTORAGE"
+  ],
+  "stdout": "id\tsku\tdescription\ttenantId\n60001\t443060\tEXTENSOFIX 60 CM\t30002\n60004\t443060\tEXTENSOFIX 60 CM\t30001\nid\tname\tcnpj\n30001\tAESC - Mãe de Deus\t88625686002443\n30002\tAESC - Mãe de Deus - UCG\t88625686002444\nid\tproductId\ttenantId\tquantity\tstatus\tzoneCode\n150019\t30001\t30001\t108\tavailable\tSTORAGE\n150020\t30001\t30001\t84\tavailable\tSTORAGE\n150021\t30002\t30001\t800\tavailable\tSTORAGE\n150022\t30003\t30001\t228\tavailable\tSTORAGE\n150027\t30003\t30001\t180\tavailable\tSTORAGE\n150029\t30002\t30001\t6\tavailable\tSTORAGE\n150037\t30002\t30001\t672\tavailable\tSTORAGE\n150053\t30001\t30001\t108\tavailable\tSTORAGE\n150068\t30003\t30001\t60\tavailable\tSTORAGE\n150074\t30002\t30001\t192\tavailable\tSTORAGE\n",
+  "stderr": "",
+  "execution_time_ms": 67
+}

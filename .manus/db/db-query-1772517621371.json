@@ -1,0 +1,13 @@
+{
+  "query": "\nUPDATE inventory SET status = 'available' WHERE status = 'avaliable';\nSELECT ROW_COUNT() as registros_corrigidos;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44TTARZqZm4zxSK.b3f2309fec40 --database VPbZo3VRZUT62wWDPHVeqm --execute \nUPDATE inventory SET status = 'available' WHERE status = 'avaliable';\nSELECT ROW_COUNT() as registros_corrigidos;\n",
+  "rows": [
+    {
+      "registros_corrigidos": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "registros_corrigidos\n0\n",
+  "stderr": "",
+  "execution_time_ms": 213
+}
